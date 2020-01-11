@@ -64,6 +64,7 @@ class Juniper extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props.children)
         this.setState({ content: this.props.children })
         const renderers = standardRendererFactories.filter(factory =>
             factory.mimeTypes.includes('text/latex') ? window.MathJax : true
@@ -75,9 +76,9 @@ class Juniper extends React.Component {
         })
 
         const cm = new CodeMirror(this.inputRef, {
-            value: this.props.children.trim(),
+            value: this.props.children[0].trim(),
             mode: this.props.lang,
-            theme: this.props.theme,
+            theme: 'default',
         })
         this.setState({ cm })
 
@@ -183,7 +184,7 @@ class Juniper extends React.Component {
         }
         if (this.props.useBinder) {
             return this.requestBinder(this.props.repo, this.props.branch, this.props.url).then(
-                settings => this.requestKernel(settings)
+                settings => console.log(settings)
             )
         }
         return this.requestKernel(this.props.serverSettings)
@@ -232,6 +233,7 @@ class Juniper extends React.Component {
             return
         }
         this.log(() => console.info('requesting kernel'))
+
         const url = this.props.url.split('//')[1]
         const action = !this.state.fromStorage ? 'Launching' : 'Reconnecting to'
         outputArea.model.clear()

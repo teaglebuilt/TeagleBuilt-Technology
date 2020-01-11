@@ -6,12 +6,23 @@ import '../styles/index.sass'
 import classes from '../styles/codeblock.module.sass'
 
 function getFiles({ allCode }) {
+    console.log(allCode)
     return Object.assign(
         {},
         ...allCode.edges.map(({ node }) => ({
-            [node.name]: node.code,
+            [node.name]: [node.code, node.ext]
         }))
     )
+}
+
+function get_kernal(source){
+    if(source === "py"){
+        return "python3"
+    } else if(source === "robot"){
+        return "robot"
+    } else {
+        console.error(`Kernal type ${source} is not available`);
+    }
 }
 
 function makeTest(template, testFile, solution) {
@@ -55,9 +66,10 @@ class CodeBlock extends React.Component {
 
     render() {
         const { Juniper, showSolution } = this.state
-        const { id, source, solution, test, children } = this.props
+        const { id, source, solution, test, children, type } = this.props
         const sourceId = source || `exc_${id}`
         const solutionId = solution || `solution_${id}`
+        // const sourceType = type || `ext_${id}`
         const testId = test || `test_${id}`
         const juniperClassNames = {
             cell: classes.cell,
@@ -76,7 +88,6 @@ class CodeBlock extends React.Component {
                                 juniper {
                                     repo
                                     branch
-                                    kernelType
                                     debug
                                 }
                             }
@@ -86,6 +97,7 @@ class CodeBlock extends React.Component {
                                 node {
                                     name
                                     code
+                                    ext
                                 }
                             }
                         }
@@ -94,7 +106,11 @@ class CodeBlock extends React.Component {
                 render={data => {
                     const { repo, branch, kernelType, debug } = data.site.siteMetadata.juniper
                     const files = getFiles(data)
+                    console.log(files)
                     const sourceFile = files[sourceId]
+                    const sourceType = files[sourceId][1]
+                    const kernel = get_kernal(sourceType)
+                    console.log(kernel)
                     const solutionFile = files[solutionId]
                     // const testFile = files[testId]
                     return (
@@ -105,8 +121,9 @@ class CodeBlock extends React.Component {
                                     classNames={juniperClassNames}
                                     repo={repo}
                                     branch={branch}
-                                    kernelType={kernelType}
+                                    kernelType={kernel}
                                     debug={debug}
+                                    lang={kernel}
                                     actions={({ runCode }) => (
                                         <>
                                             <Button onClick={() => runCode()}>Run Code</Button>
