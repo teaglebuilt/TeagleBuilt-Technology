@@ -1,0 +1,450 @@
+@import '../../theme'
+
+/* Reset */
+
+*, *:before, *:after
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+    border: 0
+    outline: 0
+
+html
+    font-family: sans-serif
+    text-rendering: optimizeSpeed
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+    
+body
+    margin: 0
+
+    
+
+.light-mode
+    background-color: #fff;
+    color: #333;
+    transition: background-color .3s ease;
+
+.dark-mode
+    background-color: #0d3042
+    color: #dfdfdf
+
+    section
+        color: #10171d
+
+    a 
+        color: #dfdfdf
+    .dark-mode-toggle > button 
+        color: #999
+        &:last-child 
+            color: lightblue
+        
+    
+ 
+.content
+    code 
+        background-color: #1b2938
+    a 
+     color: #ee09
+    button
+        color: #006688
+        background-color: transparent
+        border: none
+        font-size: 1em
+        padding: 0
+
+
+input[type='checkbox'].dmcheck
+    width: 40px
+    height: 10px
+    background: #555
+    position: relative
+    border-radius: 5px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    cursor: pointer
+    vertical-align: 2px
+    outline: none
+    &:checked + label
+        left: 30px
+    &:focus-visible
+        outline: solid 2px white
+    & + label
+        display: inline-block
+        width: 18px
+        height: 18px
+        border-radius: 50%
+        transition: all 0.3s ease
+        cursor: pointer
+        position: absolute
+        left: 2px
+        background: #fff
+        opacity: 0.9
+        background-color: #f6f6f6
+
+.toggle-control
+    position: relative
+    padding: 0 4px
+    display: flex
+    align-items: center
+
+.dark-mode-toggle
+    display: flex
+    margin: 0 auto
+    & > button
+        font-size: 1.2em
+        background: none
+        border: none
+        color: #ffe600
+        cursor: pointer
+        transition: color 0.3s ease
+
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav,
+section, summary, progress
+    display: block
+
+a
+    background-color: transparent
+    color: inherit
+    text-decoration: none
+
+    &:active,
+    &:hover
+        outline: 0
+
+abbr[title]
+    border-bottom: none
+    text-decoration: underline
+    text-decoration: underline dotted
+
+b, strong
+    font-weight: inherit
+    font-weight: bolder
+
+small
+    font-size: 80%
+
+sub, sup
+    position: relative
+    font-size: 65%
+    line-height: 0
+    vertical-align: baseline
+
+sup
+    top: -0.5em
+
+sub
+    bottom: -0.15em
+
+img
+    border: 0
+    height: auto
+    max-width: 100%
+
+svg
+    max-width: 100%
+    color-interpolation-filters: sRGB
+    fill: currentColor
+
+    &:not(:root)
+        overflow: hidden
+
+hr
+    box-sizing: content-box
+    overflow: visible
+    height: 0
+
+pre
+    overflow: auto
+
+code, pre
+    font-family: monospace, monospace
+    font-size: 1em
+
+table
+    text-align: left
+    width: 100%
+    max-width: 100%
+    border-collapse: collapse
+    margin-bottom: 2rem
+
+    td, th
+        vertical-align: top
+        padding: 0.5rem
+        border-bottom: 1px solid var(--color-subtle-medium)
+
+    code
+        white-space: nowrap
+
+button
+    appearance: none
+    background: transparent
+    cursor: pointer
+
+progress
+    appearance: none
+
+/* Layout */
+
+html
+    font-size: 11px
+
+@media(max-width: 767px)
+    html
+        font-size: 10px
+p
+    margin-bottom: 3rem
+
+::selection
+    background: var(--color-theme)
+    color: var(--color-theme-contrast)
+
+/* Code */
+
+pre, code
+    font-family: var(--font-code)
+    font-weight: 500
+    font-size: 1.25rem
+    line-height: var(--line-height)
+
+pre
+    margin-bottom: 3rem
+
+pre code
+    display: block
+    padding: 2rem !important
+
+/* Syntax highlighting */
+
+.CodeMirror
+    background: var(--color-background-code)
+
+.CodeMirror.cm-s-default
+    font-family: var(--font-code)
+    font-size: var(--font-size-sm)
+    background: var(--color-background-code)
+    color: var(--syntax-text)
+    word-wrap: break-word
+
+    .CodeMirror-line
+        padding: 0
+        background: var(--color-background-code)
+
+    .CodeMirror-selected
+        background: var(--syntax-selected-background)
+
+    .CodeMirror-cursor
+        border-left-color: currentColor
+
+    .cm-variable-2
+        color: inherit
+        font-style: italic
+
+    .cm-comment
+        color: var(--syntax-comment)
+
+    .cm-keyword, .cm-builtin
+        color: var(--syntax-keyword)
+
+    .cm-operator
+        color: var(--syntax-operator)
+
+    .cm-string
+        color: var(--syntax-selector)
+
+    .cm-number
+        color: var(--syntax-number)
+
+    .cm-def
+        color: var(--syntax-function)
+
+.jp-RenderedText pre
+    .ansi-cyan-fg.ansi-cyan-fg
+        color: var(--ansi-cyan)
+
+    .ansi-green-fg.ansi-green-fg
+        color: var(--ansi-green)
+
+    .ansi-red-fg.ansi-red-fg
+        color: var(--ansi-red)
+
+/* Gatsby Images */
+
+.gatsby-resp-image-link
+    border: 0
+
+.gatsby-resp-image-figure
+    margin-bottom: 4rem
+
+.gatsby-resp-image-figcaption
+    font-size: var(--font-size-xs)
+    color: var(--color-front-light)
+    padding-top: 1rem
+    text-align: center
+
+    code
+        color: inherit
+
+
+
+code[class*="language-"],
+pre[class*="language-"] 
+  color: white
+  background: none
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace
+  font-feature-settings: normal
+  text-align: left
+  white-space: pre
+  word-spacing: normal
+  word-break: normal
+  word-wrap: normal
+  line-height: 1.5
+  margin-bottom: 0
+
+  -moz-tab-size: 4
+  -o-tab-size: 4
+  tab-size: 4
+
+  -webkit-hyphens: none
+  -moz-hyphens: none
+  -ms-hyphens: none
+  hyphens: none
+
+
+// /* Code blocks */
+pre[class*="language-"] 
+    overflow: auto;
+    padding: 1.3125rem;
+
+
+pre[class*="language-"]::-moz-selection 
+    background: hsl(207, 4%, 16%)
+
+
+pre[class*="language-"]::selection 
+//   /* Safari */
+    background: hsl(207, 4%, 16%)
+
+
+// /* Text Selection colour */
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection 
+    text-shadow: none;
+    background: hsla(0, 0%, 100%, 0.15)
+
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection 
+    text-shadow: none;
+    background: hsla(0, 0%, 100%, 0.15)
+
+
+// /* Inline code */
+not(pre) > code[class*="language-"] 
+    border-radius: 0.3em;
+    background: var(--inlineCode-bg);
+    color: var(--inlineCode-text);
+    padding: 0.15em 0.2em 0.05em;
+    white-space: normal;
+
+
+.token.attr-name 
+    color: rgb(173, 219, 103);
+    font-style: italic;
+
+
+.token.comment 
+    color: rgb(128, 147, 147);
+
+
+.token.string,
+.token.url 
+    color: rgb(173, 219, 103);
+
+
+.token.variable 
+    color: rgb(214, 222, 235);
+
+
+.token.number 
+    color: rgb(247, 140, 108);
+
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function 
+    color: rgb(130, 170, 255);
+
+
+.token.punctuation 
+    color: rgb(199, 146, 234);
+
+
+.token.selector,
+.token.doctype 
+    color: rgb(199, 146, 234);
+    font-style: "italic";
+
+
+.token.class-name 
+    color: rgb(255, 203, 139);
+
+
+.token.tag,
+.token.operator,
+.token.keyword 
+    color: #ffa7c4;
+
+
+.token.boolean 
+    color: rgb(255, 88, 116);
+
+
+.token.property 
+    color: rgb(128, 203, 196);
+
+
+.token.namespace 
+    color: rgb(178, 204, 214);
+
+
+pre[data-line] 
+    padding: 1em 0 1em 3em
+    position: relative
+
+
+.gatsby-highlight-code-line 
+    background-color: hsla(207, 95%, 15%, 1);
+    display: block;
+    margin-right: -1.3125rem;
+    margin-left: -1.3125rem;
+    padding-right: 1em;
+    padding-left: 1.25em;
+    border-left: 0.25em solid #ffa7c4;
+
+
+.gatsby-highlight 
+    margin-bottom: 1.75rem;
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+    border-radius: 10px;
+    background: #011627;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    margin: 10px 0;
+
+
+@media (max-width: 672px) 
+    .gatsby-highlight 
+        border-radius: 10px;
+
+
+.gatsby-highlight pre[class*="language-"] 
+    float: left;
+    min-width: 100%;
+    border-radius: 10px;
+
