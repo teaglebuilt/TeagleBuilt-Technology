@@ -15,7 +15,11 @@ const Template = ({ data, pageContext }) => {
 
   return (
     <>
-    <Layout title={title}>{html}</Layout>
+    <Layout title={title}>
+      <div className={classes.markdown}>
+        {html}
+      </div>
+    </Layout>
     </>
   )
 }

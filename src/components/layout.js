@@ -30,7 +30,7 @@ const Layout = ({ title, description, children }) => {
           <>
           <div className={classes.root}>
             <SEO title={title} description={description} />
-            <main className={classes.feed}>
+            <main className={classes.layout}>
               <header className={classes.web_title}>
                 <Link to={`/`}>TeagleBuilt Technology</Link>
                 <span>
