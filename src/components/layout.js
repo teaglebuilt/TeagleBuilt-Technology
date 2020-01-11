@@ -1,10 +1,11 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import TagBar from "./tagbar"
 import SEO from "./seo"
 import DarkModeToggle from './darkmode'
 import '../styles/index.sass'
 import classes from "../styles/layout.module.sass"
+
 
 const Layout = ({ title, description, children }) => {
 
@@ -31,7 +32,7 @@ const Layout = ({ title, description, children }) => {
             <SEO title={title} description={description} />
             <main className={classes.feed}>
               <header className={classes.web_title}>
-                TeagleBuilt Technology
+                <Link to={`/`}>TeagleBuilt Technology</Link>
                 <span>
                   <DarkModeToggle />
                 </span>
