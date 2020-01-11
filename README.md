@@ -7,11 +7,11 @@
       Website
     </a>
     <div>
-      <img src="https://img.shields.io/github/languages/count/teaglebuilt/TeagleBuilt_Technology" alt="language count"/>
-      <img src="https://img.shields.io/github/last-commit/teaglebuilt/Cookbook" alt="last commit"/>
-      <img src="https://img.shields.io/github/repo-size/teaglebuilt/Cookbook?color=purple"
+      <img src="https://img.shields.io/github/languages/count/teaglebuilt/TeagleBuilt-Technology" alt="language count"/>
+      <img src="https://img.shields.io/github/last-commit/teaglebuilt/TeagleBuilt-Technology" alt="last commit"/>
+      <img src="https://img.shields.io/github/repo-size/teaglebuilt/TeagleBuilt-Technology?color=purple"
       alt="repo size" />
-      <a href="https://mybinder.org/v2/gh/teaglebuilt/Cookbook/master"> 
+      <a href="https://mybinder.org/v2/gh/teaglebuilt/TeagleBuilt-Technology/master"> 
         <img src="https://mybinder.org/badge_logo.svg" />
       </a>
   </div>
