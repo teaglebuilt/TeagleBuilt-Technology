@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql, StaticQuery } from "gatsby";
 import Icon from "../icons"
+import NewsLetter from "./newsletter"
 import { kebabCase } from "lodash";
 import classes from "../styles/tagbar.module.sass"
 
@@ -10,7 +11,7 @@ const TagBar = () => (
     <StaticQuery
       query={taglistquery}
       render={data => (
-        <ul className={classes.class_list}>
+        <ul className={classes.tag_list}>
           {data.allMarkdownRemark.group.map(node => (
             <li className={classes.tag} key={node.fieldValue}>
               <Icon name={node.fieldValue} />
@@ -25,6 +26,7 @@ const TagBar = () => (
         </ul>
       )}
     />
+    <NewsLetter />
   </div>
 )
 

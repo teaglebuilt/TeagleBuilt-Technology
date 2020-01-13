@@ -1,7 +1,9 @@
 {
   "courseId": "Cookbook",
-  "title": "Interactive Coding",
+  "title": "TeagleBuilt Technology",
   "author": "Dillan Teagle",
+  "siteUrl": "https://teaglebuilt.com",
+  "email": "dillan.teagle.va@gmail.com",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat semper urna, in accumsan sapien dui ac mi. Pellentesque felis lorem, semper nec velit nec, consectetur placerat enim.",
   "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat semper urna.",
   "juniper": {
@@ -10,5 +12,10 @@
     "kernelType": "python3",
     "debug": false
   },
-  "twitterUrl": "https://twitter.com/TeagleDillan"
+  "socialLinks": {
+    "twitter": "https://twitter.com/TeagleDillan",
+    "linkedin": "https://linkedin.com/in/teaglebuilt",
+    "github": "https://github.com/teaglebuilt",
+    "devto": "https://dev.to/teaglebuilt"
+  }
 }
