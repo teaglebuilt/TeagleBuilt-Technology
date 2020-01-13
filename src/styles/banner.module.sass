@@ -1,19 +1,35 @@
 
 .banner
-    display: flex
-    justify-content: flex-start
-    padding: .5rem
-    margin-top: 4rem
-    height: 200px
+    margin: auto
+    position: relative
+    overflow: hidden
 
     .profile
-
+        text-align: center
+        float: left
+        width: 100px
+        padding-top: 10px
+        
         img 
-            width: 14.5rem
-            height: 14.5rem
-            border-radius: 10%
+            width: 70px
+            height: 70px
+            display: inline-block
+            border-radius: 100px
+            background: no-repeat center center
+            background-size: cover
+            margin-right: 2px
+            margin-bottom: 12px
 
+        .main_content
+            margin: auto
+            width: calc(100% - 92px)
+            float: left
 
+            .profile_name 
+                text-align: left
+                font-weight: 400
+
+          
 
     .bio
         padding: 1rem

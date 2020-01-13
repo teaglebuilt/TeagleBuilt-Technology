@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
+import PostList from "../components/postlist"
+
 
 
 const TagPage = ({ pageContext, data }) => {
@@ -10,8 +12,7 @@ const TagPage = ({ pageContext, data }) => {
   return (
     <Layout>
       <SEO keywords={[tag]} title={`Posts tagged "${tag}"`} />
-      {/* <SEO title={} /> */}
-     
+      <PostList posts={edges} />
     </Layout>
   );
 };
@@ -36,6 +37,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             tags
+            image {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

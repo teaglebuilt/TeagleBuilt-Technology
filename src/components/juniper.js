@@ -8,6 +8,8 @@ import { OutputArea, OutputAreaModel } from '@jupyterlab/outputarea'
 import { RenderMimeRegistry, standardRendererFactories } from '@jupyterlab/rendermime'
 import { window } from 'browser-monads'
 
+
+
 class Juniper extends React.Component {
     outputRef = null
     inputRef = null

@@ -35,24 +35,24 @@ const SEO = ({ title, description }) => (
           content: siteMetadata.title,
         },
         {
-          property: "og:image",
-          content: image,
+          property: "og:image:alt",
+          content: image.alt,
         },
         {
           name: "twitter:card",
           content: "summary_large_image",
         },
         {
-          name: "twitter:image",
-          content: image,
+          name: "twitter:image:alt",
+          content: image.alt,
         },
         {
           name: "twitter:creator",
-          content: `@${siteMetadata.twitter}`,
+          content: `@${siteMetadata.socialLinks.twitter}`,
         },
         {
           name: "twitter:site",
-          content: `@${siteMetadata.twitter}`,
+          content: `@${siteMetadata.socialLinks.twitter}`,
         },
         {
           name: "twitter:title",
@@ -92,6 +92,13 @@ const query = graphql`
         title
         description
         bio
+        author
+        socialLinks {
+          twitter
+          linkedin
+          github
+          devto
+        }
       }
     }
   }

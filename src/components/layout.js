@@ -19,7 +19,6 @@ const Layout = ({ title, description, children }) => {
               title
               description
               bio
-              twitterUrl
             }
           }
         }
