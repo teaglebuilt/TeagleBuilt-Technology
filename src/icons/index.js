@@ -5,6 +5,7 @@ import Slack from "./Slack"
 import Gatsby from "./Gatsby"
 import Jupyter from "./Jupyter"
 import CodeSandbox from "./CodeSandbox"
+import Codepen from "./Codepen"
 
 
 const Icon = props => {
@@ -21,6 +22,8 @@ const Icon = props => {
             return <Jupyter {...props} />
         case 'Codesandbox':
             return <CodeSandbox {...props} />
+        case 'Codepen':
+            return <Codepen {...props} />
         default:
             return;
     }
