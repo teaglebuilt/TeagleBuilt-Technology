@@ -218,5 +218,20 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-152839907-1`,
+        head: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: `GTM-T6Q75HP`,
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: `gatsby` },
+      },
+    },
   ],
 }

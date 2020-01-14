@@ -40,8 +40,8 @@ export default class NewsLetter extends React.Component {
                 <h1>Newsletter Signup</h1>
                 <p>No spam, unsubscribe at any time.</p>
                 <div class={classes.info}>
-                <input type="text" name="name" onChange={this._handleChange} placeholder="Your Name" />
-                <input type="email" name="email" onChange={this._handleChange}  placeholder="Your Email" />
+                    <input type="text" name="name" onChange={this._handleChange} placeholder="Your Name" />
+                    <input type="email" name="email" onChange={this._handleChange}  placeholder="Your Email" />
                 </div>
                 <input type="submit" value="Subscribe" />
             </form> 
