@@ -75,6 +75,12 @@ module.exports = {
         plugins: [
           `gatsby-remark-copy-linked-files`,
           {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: `language-`,

@@ -44,4 +44,12 @@ To prevent this, I've included some vanilla JavaScript that you can insert in yo
 
 Note that if you change any of the default—such as storageKey or classNameDark for example—the noflash.js file will need to be modified with the same values.
 
+
+
+
+<toggleiframe source="https://codesandbox.io/s/github/gatsbyjs/gatsby/tree/master/examples/using-remark" type="Codesandbox"></toggleiframe>
+
+
+
+
 <banner author="Dillan Teagle"></banner>

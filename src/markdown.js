@@ -4,6 +4,7 @@ import Challenge from "./components/challenge"
 import { Link } from "./components/link"
 import CodeBlock from "./components/codeblock"
 import Banner from "./components/banner"
+import ToggleIframe from "./components/toggleIframe"
 
 
 export const renderAst = new rehypeReact({
@@ -13,5 +14,6 @@ export const renderAst = new rehypeReact({
     codeblock: CodeBlock,
     a: Link,
     banner: Banner,
+    toggleiframe: ToggleIframe
   },
 }).Compiler
