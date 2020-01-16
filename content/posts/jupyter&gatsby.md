@@ -19,9 +19,15 @@ date: 2018-10-23 07:00:00
 
 ## Reference of Technologies used
 
-1.  [Jupyterlab](https://www.npmjs.com/package/@jupyterlab/services)
-2.  [CodeMirror]()
+*  [Jupyterlab](https://www.npmjs.com/package/@jupyterlab/services)
+    -   An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
+<githubreadme user="teaglebuilt" repo="Cookbook"></githubreadme>
+
+
+
+*  [CodeMirror]()
+    -   An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 ---
 
 
@@ -48,6 +54,8 @@ Note that if you change any of the default—such as storageKey or classNameDark
 
 
 <toggleiframe source="https://codesandbox.io/s/github/gatsbyjs/gatsby/tree/master/examples/using-remark" type="Codesandbox"></toggleiframe>
+
+
 
 
 

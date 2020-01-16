@@ -5,7 +5,6 @@ const postTemplate = path.resolve("src/templates/post.js")
 const tagTemplate = path.resolve("src/templates/tags.js")
 
 function replacePath(pagePath) {
-  console.log(pagePath)
   return pagePath === `/` ? pagePath : pagePath.replace(/\/$/, ``)
 }
 

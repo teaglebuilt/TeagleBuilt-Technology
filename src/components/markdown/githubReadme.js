@@ -7,25 +7,38 @@ class GithubReadme extends React.Component {
     state = {
         loading: true,
         error: false,
-        fetchedData: []
+        description: null,
+        languages: null
     }
 
     componentDidMount(){
-        fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`)
-        .then(response => { return response.json()})
-        .then(json => this.setState({
-            loading: false,
-            fetchedData: json
-        }))
+        this.collectData()
+    }
+
+    collectData = async () => {
+        const result = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`)
+        const resultData = await result.json()
+        const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`)
+        const languageData = await languages.json()
+        console.log(languageData)
+        this.setState({
+            description: resultData.description,
+            languages: languageData
+        })
     }
 
 
     render() {
-        const { loading, fetchedData } = this.state;
+        const { loading, description, languages } = this.state;
         const { user, repo } = this.props;
-        console.log(fetchedData)
+        console.log(description, languages)
         return(
             <div className={classes.github_readme}>
+                <div>{
+                    Object.keys(languages).map((key, index) => ( 
+                    <p key={index}> this is my key {key} and this is my value {languages[key]}</p> 
+                    ))
+                }</div>
                 <div className={classes.overview}>
                     <h2>
                         <span><svg
@@ -39,7 +52,8 @@ class GithubReadme extends React.Component {
                             </svg></span>
                             {user}/{repo}
                     </h2>
-                    <h3>{fetchedData.description}</h3>
+                    <h3>{description}</h3>
+                    
                 </div>
                 <div className={classes.overview}>
     
