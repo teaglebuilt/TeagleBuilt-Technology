@@ -1,6 +1,6 @@
 import React from "react"
-import Icon from "../icons"
-import classes from '../styles/layout.module.sass'
+import Icon from "../../icons"
+import classes from '../../styles/layout.module.sass'
 
 
 class ToggleIframe extends React.Component {

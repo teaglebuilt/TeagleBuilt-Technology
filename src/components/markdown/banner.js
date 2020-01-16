@@ -1,6 +1,6 @@
 import React from "react"
-import classes from "../styles/banner.module.sass"
-import headshot from "../images/face.jpeg"
+import classes from "../../styles/banner.module.sass"
+import headshot from "../../images/face.jpeg"
 
 
 const Banner = ({author}) => {
