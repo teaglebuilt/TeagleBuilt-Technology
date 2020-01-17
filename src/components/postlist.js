@@ -8,9 +8,8 @@ const PostList = ({ posts}) => {
     return(
         <>
         <ul>
-          {posts.map(({ node}) => (
-            
-            <li key={node.id}>
+          {posts.map(({ node }, index) => (
+            <li key={index}>
               <PostCard id={node.id}
                         title={node.frontmatter.title}
                         slug={node.fields.slug}

@@ -19,8 +19,8 @@ const PostCard = ({title, description, tags, slug, id, image}) => {
               <Link to={slug}>{description}</Link>
             </p>
             <ul className={classes.tag_container}>
-              {tags.map(tag => (
-                  <li key={id}>
+              {tags.map((tag, index)=> (
+                  <li key={index}>
                   <Link to={`/tag/${slugify(tag)}`}>
                     <span className={classes.post_tag}>
                       <Icon name={tag} />

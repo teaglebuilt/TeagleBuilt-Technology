@@ -1,4 +1,5 @@
 import React from "react"
+// import styled from "styled-components"
 import classes from "../../styles/layout.module.sass"
 
 
@@ -7,8 +8,8 @@ class GithubReadme extends React.Component {
     state = {
         loading: true,
         error: false,
-        description: null,
-        languages: null
+        description: "",
+        languages: ""
     }
 
     componentDidMount(){
@@ -20,13 +21,34 @@ class GithubReadme extends React.Component {
         const resultData = await result.json()
         const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`)
         const languageData = await languages.json()
-        console.log(languageData)
+        const percentByLang = this.getPercentagePerKey(languageData)
         this.setState({
             description: resultData.description,
-            languages: languageData
+            languages: percentByLang
         })
     }
 
+    getPercentagePerKey(languageData) {
+        var sum = this.getSum(languageData);
+        var langsWithPercentages = {};
+        const langs = Object.keys(languageData)
+        const values = Object.values(languageData)
+        for(var i = 0; i < values.length; i++){
+            let val = values[i]
+            var percent = (val / sum) * 100;
+            langsWithPercentages[langs[i]] = percent
+        }
+        return langsWithPercentages;
+    }
+
+    getSum = (languageData) => {
+        let sum = 0;
+        const values = Object.values(languageData)
+        values.forEach(element => {
+            sum += element
+        });
+        return sum;
+    }
 
     render() {
         const { loading, description, languages } = this.state;
@@ -34,10 +56,33 @@ class GithubReadme extends React.Component {
         console.log(description, languages)
         return(
             <div className={classes.github_readme}>
-                <div>{
-                    Object.keys(languages).map((key, index) => ( 
-                    <p key={index}> this is my key {key} and this is my value {languages[key]}</p> 
-                    ))
+                <div className={classes.github_languages}>
+                {
+                    
+                    // Object.keys(languages).map((key, index) => {
+                    //     if(key === "Python"){
+                    //         console.log(languages[key], languages[index])
+                    //         const Language = styled.span`
+                    //             background-color: #3277b0;
+                    //             width: 100%;
+                    //             height: 10px;
+                    //             border-top-right-radius: 5px;
+                    //             border-top-left-radius: 5px;`
+                    //             return(
+                    //                 <Language></Language>
+                    //             )
+                    //     } else if(key === "Shell") {
+                    //         const Language = styled.span`
+                    //             background-color: #89e051;
+                    //             width: 100%;
+                    //             height: 10px;
+                    //             border-top-right-radius: 5px;
+                    //             border-top-left-radius: 5px;`
+                    //             return(
+                    //                 <Language></Language>
+                    //             )
+                    //     }
+                    // })
                 }</div>
                 <div className={classes.overview}>
                     <h2>
