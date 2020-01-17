@@ -22,7 +22,7 @@ date: 2018-10-23 07:00:00
 *  [Jupyterlab](https://www.npmjs.com/package/@jupyterlab/services)
     -   An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
-<githubreadme user="teaglebuilt" repo="PacMan"></githubreadme>
+<githubreadme user="teaglebuilt" repo="Cookbook"></githubreadme>
 
 
 

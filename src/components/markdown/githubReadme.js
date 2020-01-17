@@ -1,5 +1,5 @@
 import React from "react"
-// import styled from "styled-components"
+import styled from "styled-components"
 import classes from "../../styles/layout.module.sass"
 
 
@@ -58,31 +58,26 @@ class GithubReadme extends React.Component {
             <div className={classes.github_readme}>
                 <div className={classes.github_languages}>
                 {
-                    
-                    // Object.keys(languages).map((key, index) => {
-                    //     if(key === "Python"){
-                    //         console.log(languages[key], languages[index])
-                    //         const Language = styled.span`
-                    //             background-color: #3277b0;
-                    //             width: 100%;
-                    //             height: 10px;
-                    //             border-top-right-radius: 5px;
-                    //             border-top-left-radius: 5px;`
-                    //             return(
-                    //                 <Language></Language>
-                    //             )
-                    //     } else if(key === "Shell") {
-                    //         const Language = styled.span`
-                    //             background-color: #89e051;
-                    //             width: 100%;
-                    //             height: 10px;
-                    //             border-top-right-radius: 5px;
-                    //             border-top-left-radius: 5px;`
-                    //             return(
-                    //                 <Language></Language>
-                    //             )
-                    //     }
-                    // })
+                    Object.entries(languages).map((key, value) => {
+                        console.log(key)
+                        if(key[0] === "Python"){
+                            const Language = styled.span`
+                                background-color: #3277b0;
+                                width: ${key[1]}%;
+                                height: 10px;`
+                            return(
+                                <Language></Language>
+                            )
+                        } else if(key[0] === "Shell") {
+                            const Language = styled.span`
+                                background-color: #89e051;
+                                width: ${key[1]}%;
+                                height: 10px;`
+                            return(
+                                    <Language></Language>
+                                )
+                            }
+                    })
                 }</div>
                 <div className={classes.overview}>
                     <h2>
