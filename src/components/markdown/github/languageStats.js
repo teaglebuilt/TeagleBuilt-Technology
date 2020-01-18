@@ -28,6 +28,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "Shell") {
                     const LanguageColor = styled.span`
                         background-color: #89e051;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -43,6 +44,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "Vue") {
                     const LanguageColor = styled.span`
                         background-color: #3fb381;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -58,6 +60,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "JavaScript") {
                     const LanguageColor = styled.span`
                         background-color: #e9d64d;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -73,6 +76,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "Makefile") {
                     const LanguageColor = styled.span`
                         background-color: #427919;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -88,6 +92,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "HTML") {
                     const LanguageColor = styled.span`
                         background-color: #de4b24;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -103,6 +108,7 @@ const LanguageStats = ({ languages }) => {
                 }  else if(key[0] === "Dockerfile") {
                     const LanguageColor = styled.span`
                         background-color: #2c3e50;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -118,6 +124,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "RobotFramework") {
                     const LanguageColor = styled.span`
                         background-color: #d44d4a;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -133,6 +140,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "CSS") {
                     const LanguageColor = styled.span`
                         background-color: #563e76;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -148,6 +156,7 @@ const LanguageStats = ({ languages }) => {
                 } else if(key[0] === "Vim script") {
                     const LanguageColor = styled.span`
                         background-color: #199f4b;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
@@ -163,6 +172,7 @@ const LanguageStats = ({ languages }) => {
                 } else {
                     const LanguageColor = styled.span`
                         background-color: #ededed;
+                        display: inline-block;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%`
