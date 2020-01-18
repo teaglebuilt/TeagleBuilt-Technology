@@ -1,4 +1,6 @@
 import React from "react"
+import ReactMarkdown from "react-markdown/with-html"
+import htmlParser from 'react-markdown/plugins/html-parser'
 import config from "../../../../config/site"
 import classes from "../../../styles/layout.module.sass"
 import LanguageGraph from "./languageGraph"
@@ -19,19 +21,28 @@ class GithubReadme extends React.Component {
 
     componentDidMount(){
         this.collectData()
+        console.log(config.githubAPIToken)
     }
 
     collectData = async () => {
         const result = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`, {
             headers: new Headers({
-                Authorization: `Bearer ${config.githubAPIToken}`
+                Authorization: `token ${config.githubAPIToken}`
             })
         })
         const resultData = await result.json()
         console.log(resultData)
-        const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`)
+        const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`, {
+            headers: new Headers({
+                Authorization: `token ${config.githubAPIToken}`
+            })
+        })
         const languageData = await languages.json()
-        const readme = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/readme`)
+        const readme = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/readme`, {
+            headers: new Headers({
+                Authorization: `token ${config.githubAPIToken}`
+            })
+        })
         const readmeHTML = await readme.json()
         const html = atob(readmeHTML.content)
         const percentByLang = this.getPercentagePerKey(languageData)
@@ -64,11 +75,17 @@ class GithubReadme extends React.Component {
         return sum;
     }
 
+    parseHtml = htmlParser({
+        isValidNode: node => node.type !== 'image',
+        processingInstructions: [/* ... */]
+    })
+
     toggleStats = () => {
         this.setState({
             statsOpen: !this.state.statsOpen
         })
     }
+
 
     render() {
         const { loading, description, languages, readme } = this.state;
@@ -98,10 +115,14 @@ class GithubReadme extends React.Component {
                     
                 </div>
                 <div className={classes.github_body}>
-                    {readme}
+                    <ReactMarkdown 
+                        source={readme} 
+                        escapeHtml={false}
+                        transformImageUri={uri => console.log(uri)}
+                     />
                 </div>
                 <div className={classes.gh_btn_container}>
-                    <a className={classes.gh_btn}></a>
+                    <a className={classes.gh_btn}>View Repo</a>
                 </div>
             </div>
         )
