@@ -2,6 +2,8 @@ import React from "react"
 import classes from "../../../styles/layout.module.sass"
 import LanguageGraph from "./languageGraph"
 import LanguageStats from "./languageStats"
+import atob from "atob"
+import { type } from "os";
 
 
 class GithubReadme extends React.Component {
@@ -10,7 +12,9 @@ class GithubReadme extends React.Component {
         loading: true,
         error: false,
         description: "",
-        languages: ""
+        languages: "",
+        readme: "",
+        statsOpen: false
     }
 
     componentDidMount(){
@@ -20,12 +24,18 @@ class GithubReadme extends React.Component {
     collectData = async () => {
         const result = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`)
         const resultData = await result.json()
+        console.log(resultData)
         const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`)
         const languageData = await languages.json()
+        const readme = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/readme`)
+        const readmeHTML = await readme.json()
+        const html = atob(readmeHTML.content)
+        console.log(typeof html)
         const percentByLang = this.getPercentagePerKey(languageData)
         this.setState({
             description: resultData.description,
-            languages: percentByLang
+            languages: percentByLang,
+            readme: html
         })
     }
 
@@ -36,7 +46,7 @@ class GithubReadme extends React.Component {
         const values = Object.values(languageData)
         for(var i = 0; i < values.length; i++){
             let val = values[i]
-            var percent = (val / sum) * 100;
+            var percent = Math.round((val / sum) * 100);
             langsWithPercentages[langs[i]] = percent
         }
         return langsWithPercentages;
@@ -51,16 +61,21 @@ class GithubReadme extends React.Component {
         return sum;
     }
 
+    toggleStats = () => {
+        this.setState({
+            statsOpen: !this.state.statsOpen
+        })
+    }
+
     render() {
-        const { loading, description, languages } = this.state;
+        const { loading, description, languages, html } = this.state;
         const { user, repo } = this.props;
-        console.log(description, languages)
         return(
             <div className={classes.github_readme}>
-                <div className={classes.github_languages}>
+                <div className={classes.github_languages} onClick={this.toggleStats}>
                     <LanguageGraph languages={languages} />
                 </div>
-                <div className={classes.language_stats}>
+                <div className={this.state.statsOpen ? classes.language_stats : classes.hidden}>
                     <LanguageStats languages={languages} />
                 </div>
                 <div className={classes.overview}>
@@ -79,11 +94,8 @@ class GithubReadme extends React.Component {
                     <h3>{description}</h3>
                     
                 </div>
-                <div className={classes.overview}>
-    
-                </div>
                 <div className={classes.github_body}>
-    
+                    
                 </div>
                 <div className={classes.gh_btn_container}>
                     <a className={classes.gh_btn}></a>

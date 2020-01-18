@@ -130,13 +130,19 @@
         .github_languages
             display: flex 
             flex-direction: row
+            cursor: pointer
+
+        .hidden
+            display: none
 
         .language_stats
-            position: relative
+            position: relative     
             .percentages
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
                 .percent_li
                     display: table-cell
-                    width: 1%
                     text-align: center
                     white-space: nowrap
                     border-bottom: 0 

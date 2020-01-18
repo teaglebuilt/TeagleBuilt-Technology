@@ -31,7 +31,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -47,7 +48,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -63,7 +65,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -79,7 +82,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -95,7 +99,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -111,7 +116,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -127,7 +133,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -143,7 +150,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -159,7 +167,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
@@ -175,7 +184,8 @@ const LanguageStats = ({ languages }) => {
                         display: inline-block;
                         width: 10px;
                         height: 10px;
-                        border-radius: 50%`
+                        border-radius: 50%;
+                        margin-right: 5px;`
                     return(
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
