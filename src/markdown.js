@@ -5,7 +5,7 @@ import { Link } from "./components/link"
 import CodeBlock from "./components/codeblock"
 import Banner from "./components/markdown/banner"
 import ToggleIframe from "./components/markdown/toggleIframe"
-import GithubReadme from "./components/markdown/githubReadme"
+import GithubReadme from "./components/markdown/github/githubReadme"
 
 
 export const renderAst = new rehypeReact({

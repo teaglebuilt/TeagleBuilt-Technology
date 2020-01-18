@@ -1,6 +1,7 @@
 import React from "react"
-import styled from "styled-components"
-import classes from "../../styles/layout.module.sass"
+import classes from "../../../styles/layout.module.sass"
+import LanguageGraph from "./languageGraph"
+import LanguageStats from "./languageStats"
 
 
 class GithubReadme extends React.Component {
@@ -57,28 +58,11 @@ class GithubReadme extends React.Component {
         return(
             <div className={classes.github_readme}>
                 <div className={classes.github_languages}>
-                {
-                    Object.entries(languages).map((key, value) => {
-                        console.log(key)
-                        if(key[0] === "Python"){
-                            const Language = styled.span`
-                                background-color: #3277b0;
-                                width: ${key[1]}%;
-                                height: 10px;`
-                            return(
-                                <Language></Language>
-                            )
-                        } else if(key[0] === "Shell") {
-                            const Language = styled.span`
-                                background-color: #89e051;
-                                width: ${key[1]}%;
-                                height: 10px;`
-                            return(
-                                    <Language></Language>
-                                )
-                            }
-                    })
-                }</div>
+                    <LanguageGraph languages={languages} />
+                </div>
+                <div className={classes.language_stats}>
+                    <LanguageStats languages={languages} />
+                </div>
                 <div className={classes.overview}>
                     <h2>
                         <span><svg

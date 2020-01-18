@@ -7,7 +7,7 @@ const SVG = ({
   style = {
     marginTop: `5px`,
     marginRight: `5px`,
-    fill: `#3277b0`
+    fill: `#3572a5`
   },
   width = `20px`,
   className = ``,
