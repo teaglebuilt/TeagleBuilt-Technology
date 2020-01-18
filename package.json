@@ -9,6 +9,7 @@
     "@jupyterlab/outputarea": "^0.19.1",
     "@jupyterlab/rendermime": "^0.19.1",
     "@phosphor/widgets": "^1.6.0",
+    "atob": "^2.1.2",
     "axios": "^0.19.1",
     "browser-monads": "^1.0.0",
     "classnames": "^2.2.6",

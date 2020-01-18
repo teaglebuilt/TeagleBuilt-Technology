@@ -1,9 +1,9 @@
 import React from "react"
+import config from "../../../../config/site"
 import classes from "../../../styles/layout.module.sass"
 import LanguageGraph from "./languageGraph"
 import LanguageStats from "./languageStats"
-import atob from "atob"
-import { type } from "os";
+
 
 
 class GithubReadme extends React.Component {
@@ -22,7 +22,11 @@ class GithubReadme extends React.Component {
     }
 
     collectData = async () => {
-        const result = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`)
+        const result = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`, {
+            headers: new Headers({
+                Authorization: `Bearer ${config.githubAPIToken}`
+            })
+        })
         const resultData = await result.json()
         console.log(resultData)
         const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`)
@@ -30,7 +34,6 @@ class GithubReadme extends React.Component {
         const readme = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/readme`)
         const readmeHTML = await readme.json()
         const html = atob(readmeHTML.content)
-        console.log(typeof html)
         const percentByLang = this.getPercentagePerKey(languageData)
         this.setState({
             description: resultData.description,
@@ -68,7 +71,7 @@ class GithubReadme extends React.Component {
     }
 
     render() {
-        const { loading, description, languages, html } = this.state;
+        const { loading, description, languages, readme } = this.state;
         const { user, repo } = this.props;
         return(
             <div className={classes.github_readme}>
@@ -95,7 +98,7 @@ class GithubReadme extends React.Component {
                     
                 </div>
                 <div className={classes.github_body}>
-                    
+                    {readme}
                 </div>
                 <div className={classes.gh_btn_container}>
                     <a className={classes.gh_btn}></a>
