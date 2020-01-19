@@ -48,6 +48,7 @@ class GithubReadme extends React.Component {
         const percentByLang = this.getPercentagePerKey(languageData)
         this.setState({
             description: resultData.description,
+            url: resultData.html_url,
             languages: percentByLang,
             readme: html
         })
@@ -88,7 +89,7 @@ class GithubReadme extends React.Component {
 
 
     render() {
-        const { loading, description, languages, readme } = this.state;
+        const { loading, description, languages, readme, url } = this.state;
         const { user, repo } = this.props;
         return(
             <div className={classes.github_readme}>
@@ -118,11 +119,12 @@ class GithubReadme extends React.Component {
                     <ReactMarkdown 
                         source={readme} 
                         escapeHtml={false}
-                        transformImageUri={uri => console.log(uri)}
+                        transformImageUri={uri => uri.startsWith('http') ? uri : 
+                            `${process.env.IMAGE_BASE_URL}${uri}`}
                      />
                 </div>
                 <div className={classes.gh_btn_container}>
-                    <a className={classes.gh_btn}>View Repo</a>
+                    <a href={url} className={classes.gh_btn}>View Repo</a>
                 </div>
             </div>
         )
