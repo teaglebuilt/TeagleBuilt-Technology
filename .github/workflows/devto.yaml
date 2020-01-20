@@ -1,0 +1,15 @@
+name: DEV Publisher
+on: [push]
+jobs:
+  get_articles:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run action
+
+      # Put your action repo here
+      uses: ./actions/devto
+
+      # Put an example of your mandatory inputs here
+      env:
+        DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
