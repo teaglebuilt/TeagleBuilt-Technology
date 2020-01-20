@@ -4,7 +4,7 @@ import * as frontmatterParser from "frontmatter";
 const apiUrl = "https://dev.to/api";
 
 
-async function getAll(apiUrl, apiKey) {
+export async function getAll(apiUrl, apiKey) {
     const allPublishedPosts = await axios.get(`${apiUrl}/articles/me/all`, {
         headers: { "api-key": apiKey }
     })
@@ -20,5 +20,3 @@ async function getAll(apiUrl, apiKey) {
         }
     })
 }
-
-export default getAll
