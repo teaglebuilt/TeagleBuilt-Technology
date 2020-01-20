@@ -1,0 +1,8 @@
+name: 'DEV'
+description: 'Test DEV action'
+outputs:
+  articles:
+    description: returned articles
+runs:
+  using: 'node12'
+  main: 'index.js'

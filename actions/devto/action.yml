@@ -1,9 +1,0 @@
-name: "DEV Blogger"
-description: "Get articles from devto"
-author: "Dillan Teagle"
-outputs:
-  myOutput:
-    description: "Output from the action"
-runs:
-  using: "docker"
-  image: "Dockerfile"

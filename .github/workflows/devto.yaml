@@ -5,11 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Run action
-
-      # Put your action repo here
-      uses: ./actions/devto
-
-      # Put an example of your mandatory inputs here
+    - uses: ./actions
       env:
         DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
