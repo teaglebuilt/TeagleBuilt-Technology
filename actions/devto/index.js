@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-import getAll from "./sync"
+const authToken = process.env.DEV_API_KEY;
+import getAll from "./sync";
 
 
 try {

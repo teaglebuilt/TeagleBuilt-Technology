@@ -1,4 +1,4 @@
-name: 'DEV Blogger'
+name: 'Get Articles'
 description: 'Sync blog posts with dev.to'
 outputs:
   articles: # id of output

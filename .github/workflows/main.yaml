@@ -3,9 +3,12 @@ on: [push]
 jobs:
   devto:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-    - name: Get Posts
-      uses: ./actions/devto
-      env:
-        DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get Posts
+      - uses: ./actions/devto
+        env:
+          DEV_API_KEY: ${{ secrets.DEV_API_KEY }}
