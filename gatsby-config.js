@@ -1,5 +1,9 @@
 const meta = require("./meta.json")
 const autoprefixer = require("autoprefixer")
+require('dotenv').config({
+   path: `.env.${process.env.NODE_ENV}`
+})
+
 
 module.exports = {
   siteMetadata: meta,
@@ -17,6 +21,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-netlify-cache`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
@@ -54,6 +59,13 @@ module.exports = {
       options: {
         name: `challenges`,
         path: `${__dirname}/challenges`,
+      },
+    },
+    {
+      resolve: "gatsby-source-github",
+      options: {
+        key: `${process.env.GITHUB_API_TOKEN}`,
+        repos: ["jupyterlab/jupyterlab", "codemirror/CodeMirror",]
       },
     },
     {
@@ -152,7 +164,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `public/icons/favicon-16x16.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -209,9 +221,6 @@ module.exports = {
                         date
                         description
                         tags
-                        featuredImage {
-                          publicURL
-                        }
                       }
                     }
                   }
