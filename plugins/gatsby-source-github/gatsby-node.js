@@ -7,8 +7,8 @@ const { createNodeFactory, generateNodeId } = createNodeHelpers({
 
 const RepoNode = createNodeFactory('RepoNode');
 
-exports.sourceNodes = async ({ boundActionCreators }, configOptions ) => {
-    const { createNode } = boundActionCreators
+exports.sourceNodes = async ({ actions }, configOptions ) => {
+    const { createNode } = actions
     delete configOptions.plugins
     const apikey = configOptions.key
     const repos = configOptions.repos
