@@ -4,8 +4,8 @@
   "author": "Dillan Teagle",
   "siteUrl": "https://teaglebuilt.com",
   "email": "dillan.teagle.va@gmail.com",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat semper urna, in accumsan sapien dui ac mi. Pellentesque felis lorem, semper nec velit nec, consectetur placerat enim.",
-  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat semper urna.",
+  "description": "Technical blog and central location for documenting experience for open source education and reference.",
+  "bio": "Software Engineer specializing in web development, testing, automation, monitoring, and devOps.",
   "juniper": {
     "repo": "teaglebuilt/TeagleBuilt-Technology",
     "branch": "master",

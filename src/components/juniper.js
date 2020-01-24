@@ -99,7 +99,7 @@ class Juniper extends React.Component {
         }
     }
 
-    componentWillReceiveProps({ children }) {
+    UNSAFE_componentWillReceiveProps({ children }) {
         if (children !== this.state.content && this.state.cm) {
             this.state.cm.setValue(children.trim())
         }

@@ -1,6 +1,3 @@
-import Python from "./Python";
-
-
 import React from "react";
 
 const SVG = ({

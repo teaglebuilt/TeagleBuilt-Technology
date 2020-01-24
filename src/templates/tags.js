@@ -8,7 +8,7 @@ import PostList from "../components/postlist"
 
 const TagPage = ({ pageContext, data }) => {
   const { tag } = pageContext;
-  const { edges, totalCount } = data.allMarkdownRemark;
+  const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
       <SEO keywords={[tag]} title={`Posts tagged "${tag}"`} />

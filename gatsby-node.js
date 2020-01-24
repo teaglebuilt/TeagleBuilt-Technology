@@ -3,6 +3,8 @@ const { createFilePath } = require("gatsby-source-filesystem")
 const _ = require(`lodash`);
 const postTemplate = path.resolve("src/templates/post.js")
 const tagTemplate = path.resolve("src/templates/tags.js")
+const axios = require('axios')
+
 
 function replacePath(pagePath) {
   return pagePath === `/` ? pagePath : pagePath.replace(/\/$/, ``)
