@@ -6,6 +6,15 @@ import headshot from "../../images/face.jpeg"
 const Banner = ({author}) => {
     return (
         <>
+        {/* <div className={classes.share_container}>
+            <div className={classes.share_banner}>
+                <div className={classes.line}></div>
+                <span>
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+                </span>
+                <div className={classes.line}></div>
+            </div>
+        </div> */}
         <div className={classes.banner}>
             <div className={classes.profile}>
                 <img

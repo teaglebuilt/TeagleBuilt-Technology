@@ -6,6 +6,7 @@ import CodeBlock from "./components/codeblock"
 import Banner from "./components/markdown/banner"
 import ToggleIframe from "./components/markdown/toggleIframe"
 import GithubReadme from "./components/markdown/github/githubReadme"
+import SocialLinks from "./components/markdown/sociallinks"
 
 
 export const renderAst = new rehypeReact({
@@ -17,5 +18,6 @@ export const renderAst = new rehypeReact({
     banner: Banner,
     toggleiframe: ToggleIframe,
     githubreadme: GithubReadme,
+    sociallinks: SocialLinks
   },
 }).Compiler

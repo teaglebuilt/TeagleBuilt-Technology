@@ -1,5 +1,6 @@
 
 
 module.exports = {
-    githubAPIToken: process.env.GITHUB_API_TOKEN
+    githubAPIToken: process.env.GITHUB_API_TOKEN,
+    siteUrl: "https://teaglebuilt.com",
 }

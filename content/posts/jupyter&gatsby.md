@@ -19,45 +19,53 @@ date: 2018-10-23 07:00:00
 
 ## Reference of Technologies used
 
-*  [Jupyterlab](https://www.npmjs.com/package/@jupyterlab/services)
+You may of heard of jupyterlab. It is a python package that has interface that far exceeds original notebooks with extensible features for customization. Jupyterlab can be extended using NPM packages to their public api.
+
+<githubreadme user="jupyterlab" repo="jupyterlab"></githubreadme>
+
+
+Below are two NPM packages that I am using to integrate jupyter notebooks into my gatsby site.
+
+
+*  [JupyterLab - OutputArea](https://github.com/jupyterlab/jupyterlab/tree/master/packages/outputarea)
     -   An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
-<githubreadme user="teaglebuilt" repo="PacMan"></githubreadme>
+*  [Jupyterlab - RenderMime](https://github.com/jupyterlab/jupyterlab/tree/master/packages/rendermime-interface)
+    -   An interface for interacting with Jupyter, a large project split into  packages relative to particular use cases and given functionality
 
 
+So these two packages above is how I retrieve a given running kernel and interact with it directly through Javascripts [EventSource()](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)  class.
 
-*  [CodeMirror]()
+The next challenge is how to render the results generated from the kernel. Originally I have used PrismJS and syntax highlighting to display code in my blog. For the purpose of creating interactive code blocks, I dediced to use CodeMirror.
+
+*  [CodeMirror](https://www.npmjs.com/package/codemirror)
     -   An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
----
+
+<githubreadme user="codemirror" repo="CodeMirror"></githubreadme>
 
 
+
+The only downside right now is the first visit to the website, it will take some time to render the first result because it has to build and launch the docker container to run and return the results. Although, from then on, the kernel is stored in local storage and can quickly render results back to the user.
+
+This is perfect for creating a series of coding challenges, tutorials, etc...
 
 
 <challenge id="1" title="test">
 
-This is a code exercise. The content can be formatted in simple Markdown – so
-you can have **bold text**, `code` or [links](https://spacy.io) or lists, like
-the one for the instructions below.
+Below is a demonstration of rendering results from a jupyter kernel. Please complete the simple challenge below. **click run code when finished.**
 
-- These are instructions and they can have bullet points.
-- The code block below will look for the files 
   <codeblock source="exc_01_01_01">
   </codeblock>
   
 </challenge>
 
-To prevent this, I've included some vanilla JavaScript that you can insert in your index.html just after the <body> tag. It is in a file named noflash.js.txt. You can either insert the contents of this file in a <script> tag or automate the step in your build process.
+## Credit
 
-Note that if you change any of the default—such as storageKey or classNameDark for example—the noflash.js file will need to be modified with the same values.
+This project was inspired by
 
+<githubreadme user="minrk" repo="thebelab"></githubreadme>
 
-
-
-<toggleiframe source="https://codesandbox.io/s/github/gatsbyjs/gatsby/tree/master/examples/using-remark" type="Codesandbox"></toggleiframe>
-
-
-
-
+<sociallinks title="Gatsby & Jupyter" path="jupyter&gatsby" description="Integrating kernels from Jupyter into Gatsby with server side events. Interactive code blocks with code execution powered by kernels from jupyter!"></sociallinks>
 
 
 <banner author="Dillan Teagle"></banner>

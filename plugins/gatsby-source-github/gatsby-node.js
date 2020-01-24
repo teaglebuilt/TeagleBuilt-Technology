@@ -36,6 +36,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, con
             let newNode = {
                 id: createNodeId(`repoNode-${index}`),
                 url: `https://github.com/${repo}`,
+                name: `${repo}`,
                 description: repoData.description,
                 languages: languageData,
                 readme: readmeHTML.content,
