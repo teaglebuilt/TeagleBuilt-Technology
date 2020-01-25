@@ -62,13 +62,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-github",
-      options: {
-        key: `${process.env.GITHUB_API_TOKEN}`,
-        repos: ["jupyterlab/jupyterlab", "codemirror/CodeMirror",]
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
