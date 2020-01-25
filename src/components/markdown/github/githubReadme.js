@@ -1,72 +1,99 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
 import ReactMarkdown from "react-markdown/with-html"
 import htmlParser from 'react-markdown/plugins/html-parser'
-import urljoin from "url-join";
 import config from "../../../../config/site"
 import classes from "../../../styles/layout.module.sass"
 import LanguageGraph from "./languageGraph"
 import LanguageStats from "./languageStats"
-import githubData from "./githubData"
-import { defaultSanitizer } from "@jupyterlab/apputils";
 
-function findRepo(allRepos, user, repository) {
-  allRepos.forEach(node => {
-    console.log(node.node.url, `https://github.com/${user}/${repository}`)
-    if(node.node.url === `https://github.com/${user}/${repository}`){
-      return node
-    } else {
-      console.log("error")
-    }
-  })
-}
 
 
 class GithubReadme extends React.Component {
 
-  state = {
-    error: false,
-    description: "",
-    languages: "",
-    readme: "",
-    statsOpen: false
-  }
+    state = {
+        error: false,
+        description: "",
+        languages: "",
+        readme: "",
+        statsOpen: false
+    }
 
-  componentDidMount(){
-    this.setState({
-      statsOpen: false
+    componentDidMount(){
+        this.collectData()
+        console.log(config.githubAPIToken)
+    }
+
+    collectData = async () => {
+        const result = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}`, {
+            headers: new Headers({
+                Authorization: `token ${config.githubAPIToken}`
+            })
+        })
+        const resultData = await result.json()
+        console.log(resultData)
+        const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`, {
+            headers: new Headers({
+                Authorization: `token ${config.githubAPIToken}`
+            })
+        })
+        const languageData = await languages.json()
+        const readme = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/readme`, {
+            headers: new Headers({
+                Authorization: `token ${config.githubAPIToken}`
+            })
+        })
+        const readmeHTML = await readme.json()
+        const html = atob(readmeHTML.content)
+        const percentByLang = this.getPercentagePerKey(languageData)
+        this.setState({
+            description: resultData.description,
+            url: resultData.html_url,
+            languages: percentByLang,
+            readme: html
+        })
+    }
+
+    getPercentagePerKey(languageData) {
+        var sum = this.getSum(languageData);
+        var langsWithPercentages = {};
+        const langs = Object.keys(languageData)
+        const values = Object.values(languageData)
+        for(var i = 0; i < values.length; i++){
+            let val = values[i]
+            var percent = Math.round((val / sum) * 100);
+            langsWithPercentages[langs[i]] = percent
+        }
+        return langsWithPercentages;
+    }
+
+    getSum = (languageData) => {
+        let sum = 0;
+        const values = Object.values(languageData)
+        values.forEach(element => {
+            sum += element
+        });
+        return sum;
+    }
+
+    parseHtml = htmlParser({
+        isValidNode: node => node.type !== 'image',
+        processingInstructions: [/* ... */]
     })
-  }
 
-  parseHtml = htmlParser({
-      isValidNode: node => node.type !== 'image',
-      processingInstructions: [/* ... */]
-  })
-
-  toggleStats = () => {
-      this.setState({
-          statsOpen: !this.state.statsOpen
-      })
-  }
+    toggleStats = () => {
+        this.setState({
+            statsOpen: !this.state.statsOpen
+        })
+    }
 
 
-
-  render() {
-    const { user, repository } = this.props;
-    console.log(user, repository, this.props)
-    return(
-      <StaticQuery
-        query={githubQuery}
-        render={data => {
-          console.log(data)
-          const repos = data.allRepoNode.edges;
-          const repo = findRepo(repos, user, repository)
-          console.log(repo)
-          return(
-            <div className={classes.github_readme}>
-              =================
-
-                    {/* <div className={classes.github_languages} onClick={this.toggleStats}>
+    render() {
+        const { description, languages, readme, url } = this.state;
+        const { user, repo } = this.props;
+            return(
+            
+                <div className={classes.github_readme}>
+                    <div className={classes.github_languages} onClick={this.toggleStats}>
                         <LanguageGraph languages={languages} />
                     </div>
                     <div className={this.state.statsOpen ? classes.language_stats : classes.hidden}>
@@ -98,127 +125,11 @@ class GithubReadme extends React.Component {
                     </div>
                     <div className={classes.gh_btn_container}>
                         <a href={url} className={classes.gh_btn}>View Repo</a>
-                    </div> */}
+                    </div>
                 </div>
-          )
-        }}
-      />
-    )
-  }
+            )
+        }
 }
 
+
 export default GithubReadme
-// class GithubReadme extends React.Component {
-
-
-
-//   static getDerivedStateFromProps(nextProps) {
-//     if(nextProps.)
-//   }
-
-//   function getPercentagePerKey(languageData) {
-//       var sum = getSum(languageData);
-//       var langsWithPercentages = {};
-//       const langs = Object.keys(languageData)
-//       const values = Object.values(languageData)
-//       for(var i = 0; i < values.length; i++){
-//           let val = values[i]
-//           var percent = Math.round((val / sum) * 100);
-//           langsWithPercentages[langs[i]] = percent
-//       }
-//       return langsWithPercentages;
-//   }
-
-//   function getSum(languageData) {
-//     let sum = 0;
-//     const values = Object.values(languageData)
-//     values.forEach(element => {
-//         sum += element
-//     });
-//     return sum;
-// }
-
-
-
-//   render() {
-//     const { user, repository } = this.props;
-//     return(
-//       <useStaticQuery 
-//             query={githubQuery}
-//             render={data => {
-//                 const repos = data.allRepoNode.edges;
-//                 repos.forEach(repo => {
-//                     const url = `https://github.com/${user}/${repository}`
-//                     if(repo.node.url === url) {
-//                       const langs = this.getPercentagePerKey(repo.node.languages)
-//                       const html = atob(repo.node.readme)
-//                       console.log(html)
-//                     } else {
-//                       console.log("error")
-//                     }
-//                 })
-//                 return(
-//                     <div>Github</div>
-//                 )
-//             }}
-//         />
-//     )
-//   }
-// }
-
-// function GithubReadme({ user, repo }) {
-//   const data = githubData()
-//   console.log(data)
-// }
-
-// const GithubReadme = ({ user, repository }) => {
-//   return(
-//       <StaticQuery 
-//           query={githubQuery}
-//           render={data => {
-//               const repos = data.allRepoNode.edges;
-//               repos.forEach(repo => {
-//                   const url = `https://github.com/${user}/${repository}`
-//                   if(repo.node.url === url) {
-//                     console.log(repo.node.languages)
-//                     // const langs = getPercentagePerKey(repo.node.languages)
-//                     // console.log(langs)
-//                   }
-//               })
-//               return(
-//                   <div>Github</div>
-//               )
-//           }}
-//       />
-//   )
-// }
-
-// export default GithubReadme
-
-
-const githubQuery = graphql`
-query MyQuery {
-    allRepoNode {
-      edges {
-        node {
-          url
-          description
-          id
-          readme
-          languages {
-            JavaScript
-            HTML
-            CSS
-            Shell
-            TypeScript
-            Python
-            Batchfile
-            Dockerfile
-          }
-        }
-      }
-    }
-  }
-`
-
-

@@ -21,7 +21,7 @@ date: 2018-10-23 07:00:00
 
 You may of heard of jupyterlab. It is a python package that has interface that far exceeds original notebooks with extensible features for customization. Jupyterlab can be extended using NPM packages to their public api.
 
-<githubreadme user="jupyterlab" repository="jupyterlab"></githubreadme>
+<githubreadme user="jupyterlab" repo="jupyterlab"></githubreadme>
 
 
 Below are two NPM packages that I am using to integrate jupyter notebooks into my gatsby site.
@@ -41,7 +41,7 @@ The next challenge is how to render the results generated from the kernel. Origi
 *  [CodeMirror](https://www.npmjs.com/package/codemirror)
     -   An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
-<githubreadme user="codemirror" repository="CodeMirror"></githubreadme>
+<githubreadme user="codemirror" repo="CodeMirror"></githubreadme>
 
 
 
@@ -63,7 +63,7 @@ Below is a demonstration of rendering results from a jupyter kernel. Please comp
 
 This project was inspired by
 
-<githubreadme user="minrk" repository="thebelab"></githubreadme>
+<githubreadme user="minrk" repo="thebelab"></githubreadme>
 
 <sociallinks title="Gatsby & Jupyter" path="jupyter&gatsby" description="Integrating kernels from Jupyter into Gatsby with server side events. Interactive code blocks with code execution powered by kernels from jupyter!"></sociallinks>
 
