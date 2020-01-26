@@ -59,11 +59,7 @@ Below is a demonstration of rendering results from a jupyter kernel. Please comp
   
 </challenge>
 
-## Credit
 
-This project was inspired by
-
-<githubreadme user="minrk" repo="thebelab"></githubreadme>
 
 <sociallinks title="Gatsby & Jupyter" path="jupyter&gatsby" description="Integrating kernels from Jupyter into Gatsby with server side events. Interactive code blocks with code execution powered by kernels from jupyter!"></sociallinks>
 

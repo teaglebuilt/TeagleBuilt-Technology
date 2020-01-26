@@ -21,7 +21,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-netlify-cache`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
@@ -241,5 +240,6 @@ module.exports = {
         defaultDataLayer: { platform: `gatsby` },
       },
     },
+    `gatsby-plugin-netlify-cache`
   ],
 }
