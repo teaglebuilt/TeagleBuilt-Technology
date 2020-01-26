@@ -33,6 +33,7 @@ const Layout = ({ title, description, children }) => {
                 <DarkModeToggle />
                 <Link className={classes.web_title} to={`/`}>TeagleBuilt Technology</Link>
                 <div className={classes.social_links}>
+                <Link to={`/contact`}>Contact</Link>
                     <a href="https://twitter.com/TeagleDillan" target="#">
                         <svg
                         className={classes.icon}
