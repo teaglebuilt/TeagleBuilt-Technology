@@ -22,7 +22,7 @@ async function onCreateNode({
     const slug = createFilePath({
       node,
       getNode,
-      basePath: "posts",
+      basePath: "/",
       trailingSlash: false,
     })
     createNodeField({ name: "slug", node, value: slug })
