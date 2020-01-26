@@ -17,6 +17,15 @@
   </div>
 </div>
 
+
+<div align="center">
+    <a href="https://developers.google.com/web/tools/lighthouse/">
+      <img src="docs/pwa-score.png" alt="Lighthouse Score" />
+    </a>
+</div>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9865deec-9070-4bec-b428-b8b49a87dd37/deploy-status)](https://app.netlify.com/sites/suspicious-hawking-fe517f/deploys)
+
 ## Introduction
 
 **TeagleBuilt Technology provides** detailed documentation about technologies and a learning platfrom for users to engage with the content. Interactive courses will be available for free in the future.
