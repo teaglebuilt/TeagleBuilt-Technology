@@ -20,7 +20,6 @@ class GithubReadme extends React.Component {
 
     componentDidMount(){
         this.collectData()
-        console.log(config.githubAPIToken)
     }
 
     collectData = async () => {
@@ -30,7 +29,6 @@ class GithubReadme extends React.Component {
             })
         })
         const resultData = await result.json()
-        console.log(resultData)
         const languages = await fetch(`https://api.github.com/repos/${this.props.user}/${this.props.repo}/languages`, {
             headers: new Headers({
                 Authorization: `token ${config.githubAPIToken}`

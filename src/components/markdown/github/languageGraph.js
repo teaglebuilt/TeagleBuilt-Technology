@@ -5,7 +5,6 @@ import styled from "styled-components"
 const LanguageGraph = ({ languages }) => {
     return(
         Object.entries(languages).map((key, value) => {
-            console.log(key)
             if(key[0] === "Python"){
                 const Language = styled.span`
                     background-color: #3572a5;
