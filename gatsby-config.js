@@ -1,5 +1,6 @@
 const meta = require("./meta.json")
 const autoprefixer = require("autoprefixer")
+
 require('dotenv').config({
    path: `.env.${process.env.NODE_ENV}`
 })
@@ -51,13 +52,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/content/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `challenges`,
-        path: `${__dirname}/challenges`,
       },
     },
     {

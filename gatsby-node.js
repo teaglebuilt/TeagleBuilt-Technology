@@ -12,12 +12,9 @@ function replacePath(pagePath) {
 async function onCreateNode({
   node,
   actions,
-  getNode,
-  loadNodeContent,
-  createNodeId,
-  createContentDigest,
+  getNode
 }) {
-  const { createNodeField, createNode, createParentChildLink } = actions
+  const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
     const slug = createFilePath({
       node,
@@ -26,24 +23,7 @@ async function onCreateNode({
       trailingSlash: false,
     })
     createNodeField({ name: "slug", node, value: slug })
-  } else if (node.extension === "py") {
-    // Load the contents of the Python file and make it available via GraphQL
-    // https://www.gatsbyjs.org/docs/creating-a-transformer-plugin/
-    const content = await loadNodeContent(node)
-    const contentDigest = createContentDigest(content)
-    const id = createNodeId(`${node.id}-code`)
-    const internal = { type: "Code", contentDigest }
-    const codeNode = {
-      id,
-      parent: node.id,
-      children: [],
-      code: content,
-      name: node.name,
-      internal,
-    }
-    createNode(codeNode)
-    createParentChildLink({ parent: node, child: codeNode })
-  }
+  } 
 }
 
 exports.onCreateNode = onCreateNode

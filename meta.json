@@ -1,17 +1,11 @@
 {
-  "courseId": "Cookbook",
   "title": "TeagleBuilt Technology",
   "author": "Dillan Teagle",
+  "slogan": "Passion for technology in Code",
   "siteUrl": "https://teaglebuilt.com",
   "email": "dillan.teagle.va@gmail.com",
   "description": "Technical blog and central location for documenting experience for open source education and reference.",
   "bio": "Software Engineer specializing in web development, testing, automation, monitoring, and devOps.",
-  "juniper": {
-    "repo": "teaglebuilt/TeagleBuilt-Technology",
-    "branch": "master",
-    "kernelType": "python3",
-    "debug": false
-  },
   "socialLinks": {
     "twitter": "https://twitter.com/TeagleDillan",
     "linkedin": "https://linkedin.com/in/teaglebuilt",
