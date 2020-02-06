@@ -3,8 +3,9 @@ import PostCard from "./postcard"
 
 
 
-const PostList = ({ posts}) => {
+const PostList = ({ posts, images }) => {
     console.log(posts)
+    console.log(images)
     return(
         <>
         <ul>
