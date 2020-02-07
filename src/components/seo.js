@@ -6,6 +6,7 @@ const SEO = ({ title, description }) => (
   <StaticQuery
     query={query}
     render={data => {
+      console.log(data)
       const lang = "en"
       const siteMetadata = data.site.siteMetadata
       const pageTitle = title
@@ -93,6 +94,7 @@ const query = graphql`
         description
         bio
         author
+        slogan
         socialLinks {
           twitter
           linkedin

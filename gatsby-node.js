@@ -14,7 +14,7 @@ async function onCreateNode({
   actions,
   getNode
 }) {
-  const { createNodeField, createNode, createParentChildLink } = actions
+  const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
     const slug = createFilePath({
       node,
@@ -23,7 +23,11 @@ async function onCreateNode({
       trailingSlash: false,
     })
     createNodeField({ name: "slug", node, value: slug })
+<<<<<<< HEAD
   }
+=======
+  } 
+>>>>>>> 2a6ec6305f14aa53803f1471c3a0cbc0da9b73ee
 }
 
 exports.onCreateNode = onCreateNode
