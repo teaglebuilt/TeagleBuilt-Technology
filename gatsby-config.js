@@ -54,13 +54,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `challenges`,
-        path: `${__dirname}/challenges`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
