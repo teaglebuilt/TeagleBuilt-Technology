@@ -18,15 +18,14 @@
             margin: 0 5px 0 5px;
             
 .banner
-    margin: auto
-    position: relative
-    overflow: hidden
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
 
     .profile
         text-align: center
         float: left
         width: 100px
-        padding-top: 10px
         
         img 
             width: 70px
@@ -38,12 +37,10 @@
             margin-right: 2px
             margin-bottom: 12px
 
-        .main_content
-            margin: auto
-            width: calc(100% - 92px)
-            float: left
-
-            .profile_name 
+    .main_content
+        margin-left: 20px
+        margin-top: 20px
+        .profile_name 
                 text-align: left
                 font-weight: 400
 
