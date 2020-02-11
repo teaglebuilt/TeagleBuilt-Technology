@@ -11,13 +11,13 @@ import '../styles/index.sass'
 const Template = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, htmlAst } = markdownRemark
-  const { title, description, tags } = frontmatter
+  const { title, description, tags, image } = frontmatter
   const html = renderAst(htmlAst)
 
   return (
     <>
     <Layout title={title}>
-      <SEO keywords={[tags]} title={title} description={description} />
+      <SEO keywords={[tags]} title={title} description={description} thumbnail={image} />
       <div className={classes.markdown}>
         {html}
       </div>
@@ -37,6 +37,13 @@ export const pageQuery = graphql`
         description
         tags
         date
+        image {
+          childImageSharp {
+            sizes(maxWidth: 600) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

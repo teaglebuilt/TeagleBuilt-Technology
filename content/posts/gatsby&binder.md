@@ -3,7 +3,7 @@ path: "/gatsby_theme_binder"
 title: Connecting Gatsby to Jupyter for static code execution
 description: Lets power a gatsby wesbite with kernels from jupyter notebooks to execute code and render results with server sent events in markdown components.
 type: post
-image: ../images/jupyter_gatsby.jpg
+image: ../images/gatsby_theme_binder.jpg
 tags:
   - Gatsby
   - Jupyter
@@ -12,7 +12,7 @@ date: 2018-06-08 07:00:00
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ff0693nes2p61bm22ct3.jpg)
 
-<div style="display: flex; align-content: flex-start;">
+<div style="display: flex; justify-content: center;">
         <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fteaglebuilt%2Fgatsby-theme-binder">
           <img style="margin: 0;" alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fteaglebuilt%2Fgatsby-theme-binder">
         </a>
@@ -32,7 +32,7 @@ date: 2018-06-08 07:00:00
         <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/gatsby">
       </a>
     </div>
-    <div style="display: flex; align-content: flex-start;">
+    <div style="display: flex; justify-content: center;">
       <img style="margin: 0;" src="https://img.shields.io/npm/dw/@teaglebuilt/gatsby-theme-binder">
       <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/gatsby-source-filesystem">
       <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/react">

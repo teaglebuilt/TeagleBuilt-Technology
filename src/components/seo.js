@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description }) => (
+const SEO = ({ title, description, thumbnail }) => (
   <StaticQuery
     query={query}
     render={data => {
@@ -13,7 +13,12 @@ const SEO = ({ title, description }) => (
         ? `${title} · ${siteMetadata.title}`
         : `${siteMetadata.title} · ${siteMetadata.slogan}`
       const pageDesc = description || siteMetadata.description
-      const image = `${siteMetadata.siteUrl}/social.jpg`
+      const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
+      let origin = "";
+      if (typeof window !== "undefined") {
+        origin = window.location.origin;
+      }
+      const image = origin + imageSrc;
       const meta = [
         {
           name: "description",
@@ -44,8 +49,8 @@ const SEO = ({ title, description }) => (
           content: "summary_large_image",
         },
         {
-          name: "twitter:image:alt",
-          content: image.alt,
+          name: "twitter:image",
+          content: image,
         },
         {
           name: "twitter:creator",

@@ -16,13 +16,14 @@ const Banner = ({author}) => {
             </div>
             <div className={classes.main_content}>
                 <h2 className={classes.profile_name}>{author}</h2>
-                <iframe
-                    className="my-2 xs:mx-auto md:ml-6"
-                    frameborder="0"
-                    height="20px"
-                    src="https://ghbtns.com/github-btn.html?user=teaglebuilt&type=follow&count=true"
-                    width="170px"
-                ></iframe>
+                <div className={classes.links}>
+                        <iframe
+                            frameborder="0"
+                            height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=teaglebuilt&type=follow&count=true"
+                            width="170px"
+                        ></iframe>
+                </div>
             </div>
         </div>
         
