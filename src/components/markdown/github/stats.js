@@ -3,7 +3,7 @@ import styled from "styled-components"
 import classes from "../../../styles/layout.module.sass"
 
 
-const LanguageStats = ({ languages }) => {
+const LanguageStats = (languages) => {
     return (
         <ol className={classes.percentages}>
             {Object.entries(languages).map(key => {

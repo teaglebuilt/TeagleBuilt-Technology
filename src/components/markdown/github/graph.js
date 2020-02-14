@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 
-const LanguageGraph = ({ languages }) => {
+const LanguageGraph = (languages) => {
     return (
         Object.entries(languages).map((key, value) => {
             if (key[0] === "Python") {
