@@ -1,11 +1,12 @@
-import React from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
 
 
 const LanguageGraph = (languages) => {
+
     return (
-        Object.entries(languages).map((key, value) => {
-            if (key[0] === "Python") {
+        Object.entries(languages['languages']).map((key, value) => {
+            if (key === "Python") {
                 const Language = styled.span`
                     background-color: #3572a5;
                     width: ${key[1]}%;

@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useEffect} from "react"
 import styled from "styled-components"
 import classes from "../../../styles/layout.module.sass"
 
 
 const LanguageStats = (languages) => {
+
     return (
         <ol className={classes.percentages}>
-            {Object.entries(languages).map(key => {
+            {Object.entries(languages['languages']).map(key => {
+                console.log(key)
                 if (key[0] === "Python") {
                     const LanguageColor = styled.span`
                         background-color: #3572a5;
@@ -20,8 +22,8 @@ const LanguageStats = (languages) => {
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
-                                <span>{key[0]}</span>
-                                <span>{`${key[1]}%`}</span>
+                                <span>{key}</span>
+                                <span>{`${key}%`}</span>
                             </p>
                         </li>
                     )

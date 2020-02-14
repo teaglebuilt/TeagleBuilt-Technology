@@ -20,12 +20,11 @@ const Readme = ({ user, repo }) => {
    })
     
    const { description, readme, languages, url } = gitrepo
-   
     return(
         <div className={classes.github_readme}>
             <div
                 className={classes.github_languages}
-                onClick={() => setToggle(true)}
+                onClick={() => setToggle(!toggle)}
             >
                 <LanguageGraph languages={languages} />
             </div>
