@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "atob": "^2.1.2",
     "gatsby-node-helpers": "^0.3.0",
     "node-fetch": "^2.6.0",
     "query-string": "^6.10.1"
