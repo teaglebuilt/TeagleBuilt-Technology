@@ -62,6 +62,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-github`,
+      options: {
+        key: process.env.GATSBY_GITHUB_API_TOKEN,
+        repos: ['jupyterlab/jupyterlab', 'teaglebuilt/gatsby-theme-binder', 'codemirror/CodeMirror']
+      }
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,

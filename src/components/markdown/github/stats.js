@@ -4,10 +4,10 @@ import classes from "../../../styles/layout.module.sass"
 
 
 const LanguageStats = ({ languages }) => {
-    return(
+    return (
         <ol className={classes.percentages}>
             {Object.entries(languages).map(key => {
-                if(key[0] === "Python"){
+                if (key[0] === "Python") {
                     const LanguageColor = styled.span`
                         background-color: #3572a5;
                         display: inline-block;
@@ -16,16 +16,16 @@ const LanguageStats = ({ languages }) => {
                         border-radius: 50%;
                         margin-right: 5px;
                         `
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
                     )
-                } else if(key[0] === "Shell") {
+                } else if (key[0] === "Shell") {
                     const LanguageColor = styled.span`
                         background-color: #89e051;
                         display: inline-block;
@@ -33,16 +33,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "Vue") {
+                    )
+                } else if (key[0] === "Vue") {
                     const LanguageColor = styled.span`
                         background-color: #3fb381;
                         display: inline-block;
@@ -50,16 +50,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "JavaScript") {
+                    )
+                } else if (key[0] === "JavaScript") {
                     const LanguageColor = styled.span`
                         background-color: #e9d64d;
                         display: inline-block;
@@ -67,16 +67,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "Makefile") {
+                    )
+                } else if (key[0] === "Makefile") {
                     const LanguageColor = styled.span`
                         background-color: #427919;
                         display: inline-block;
@@ -84,16 +84,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "HTML") {
+                    )
+                } else if (key[0] === "HTML") {
                     const LanguageColor = styled.span`
                         background-color: #de4b24;
                         display: inline-block;
@@ -101,16 +101,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                }  else if(key[0] === "Dockerfile") {
+                    )
+                } else if (key[0] === "Dockerfile") {
                     const LanguageColor = styled.span`
                         background-color: #2c3e50;
                         display: inline-block;
@@ -118,16 +118,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "RobotFramework") {
+                    )
+                } else if (key[0] === "RobotFramework") {
                     const LanguageColor = styled.span`
                         background-color: #d44d4a;
                         display: inline-block;
@@ -135,16 +135,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "CSS") {
+                    )
+                } else if (key[0] === "CSS") {
                     const LanguageColor = styled.span`
                         background-color: #563e76;
                         display: inline-block;
@@ -152,16 +152,16 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-                } else if(key[0] === "Vim script") {
+                    )
+                } else if (key[0] === "Vim script") {
                     const LanguageColor = styled.span`
                         background-color: #199f4b;
                         display: inline-block;
@@ -169,15 +169,15 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
+                    )
                 } else {
                     const LanguageColor = styled.span`
                         background-color: #ededed;
@@ -186,17 +186,17 @@ const LanguageStats = ({ languages }) => {
                         height: 10px;
                         border-radius: 50%;
                         margin-right: 5px;`
-                    return(
+                    return (
                         <li className={classes.percent_li}>
                             <p className={classes.percent}>
                                 <LanguageColor></LanguageColor>
                                 <span>{key[0]}</span>
                                 <span>{`${key[1]}%`}</span>
-                            </p> 
+                            </p>
                         </li>
-                        )
-            }
-        })}
+                    )
+                }
+            })}
         </ol>
     )
 }
