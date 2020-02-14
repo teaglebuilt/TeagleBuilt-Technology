@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown/with-html"
 import useGithub from "../../../hooks/useGithubData"
+import LanguageGraph from "./graph"
+import LanguageStats from "./stats"
 import classes from "../../../styles/layout.module.sass"
 
 
@@ -17,7 +19,7 @@ const Readme = ({ user, repo }) => {
        setGitRepo(repository.node)
    })
     
-   const { description, readme } = gitrepo
+   const { description, readme, languages, url } = gitrepo
    
     return(
         <div className={classes.github_readme}>
@@ -25,6 +27,14 @@ const Readme = ({ user, repo }) => {
                 className={classes.github_languages}
                 onClick={() => setToggle(true)}
             >
+                <LanguageGraph languages={languages} />
+            </div>
+            <div
+                className={
+                    toggle ? classes.language_stats : classes.hidden
+                }
+            >
+                <LanguageStats languages={languages} />
             </div>
             <div className={classes.overview}>
                 <h2>
@@ -53,6 +63,11 @@ const Readme = ({ user, repo }) => {
                             : `${process.env.IMAGE_BASE_URL}${uri}`
                     }
                 />
+            </div>
+            <div className={classes.gh_btn_container}>
+                <a href={url} className={classes.gh_btn}>
+                    View Repo
+                  </a>
             </div>
         </div>
     )
