@@ -12,35 +12,7 @@ date: 2018-06-08 07:00:00
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ff0693nes2p61bm22ct3.jpg)
 
-<div style="display: flex; justify-content: center;">
-        <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fteaglebuilt%2Fgatsby-theme-binder">
-          <img style="margin: 0;" alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fteaglebuilt%2Fgatsby-theme-binder">
-        </a>
-        <a href="https://twitter.com/intent/follow?screen_name=TeagleDillan">
-          <img style="margin: 0;" alt="Twitter Follow" src="https://img.shields.io/twitter/follow/TeagleDillan?style=social">
-        </a>
-        <a href="https://github.com/teaglebuilt/gatsby-theme-binder">
-          <img style="margin: 0;" src="https://img.shields.io/github/watchers/teaglebuilt/gatsby-theme-binder?style=social">
-        </a>
-        <a href="https://github.com/teaglebuilt/gatsby-theme-binder">
-          <img style="margin: 0;" src="https://img.shields.io/github/stars/teaglebuilt/gatsby-theme-binder?style=social">
-        </a>
-        <a href="https://img.shields.io/npm/v/@teaglebuilt/gatsby-theme-binder">
-        <img style="margin: 0;" alt="npm" src="https://img.shields.io/npm/v/@teaglebuilt/gatsby-theme-binder">
-      </a>
-      <a href="https://www.gatsbyjs.org/packages/@teaglebuilt/gatsby-theme-binder">
-        <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/gatsby">
-      </a>
-    </div>
-    <div style="display: flex; justify-content: center;">
-      <img style="margin: 0;" src="https://img.shields.io/npm/dw/@teaglebuilt/gatsby-theme-binder">
-      <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/gatsby-source-filesystem">
-      <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/react">
-      <img style="margin: 0;" alt="npm peer dependency version" src="https://img.shields.io/npm/dependency-version/@teaglebuilt/gatsby-theme-binder/peer/react-dom">
-  </div>
-
 &nbsp;
-
 
 Many of us know the great benefits of using gatsby. In 2020, writing your content from markdown is very popular and has many different benefits in terms of SEO, delivery, and performance. None the less, able to integrate react components into your static content written in markdown. We all know this.
 
