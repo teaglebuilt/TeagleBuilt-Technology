@@ -20,7 +20,7 @@
 
 <div align="center">
     <a href="https://developers.google.com/web/tools/lighthouse/">
-      <img src="docs/pwa-score.png" alt="Lighthouse Score" />
+      <img src="https://raw.githubusercontent.com/teaglebuilt/TeagleBuilt-Technology/master/assets/lighthouse_score.png" alt="Lighthouse Score" />
     </a>
 </div>
 
