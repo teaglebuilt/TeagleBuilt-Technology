@@ -77,7 +77,7 @@ The next challenge is how to render the results generated from the kernel. Origi
  An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
 
-<githubreadme user="codemirror" repo="CodeMirror"></githubreadme>
+
 
 
 # How to use it
