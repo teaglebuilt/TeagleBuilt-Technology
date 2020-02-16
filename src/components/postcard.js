@@ -13,7 +13,7 @@ const PostCard = ({title, description, tags, slug, id, image}) => {
               <Link to={slug}>{title}</Link>
             </h2>
             <Link to={slug}>
-              <Img fluid={image} className={classes.postcard_image} />
+              <Img fluid={image} className={classes.postcard_image} alt={title} />
             </Link>
             <p className={classes.chapterDesc}>
               <Link to={slug}>{description}</Link>
