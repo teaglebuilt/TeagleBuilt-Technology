@@ -19,8 +19,8 @@ async function onCreateNode({
     const slug = createFilePath({
       node,
       getNode,
-      basePath: "/",
-      trailingSlash: false,
+      basePath: "content/posts/",
+      trailingSlash: false
     })
     createNodeField({ name: "slug", node, value: slug })
   } 
@@ -55,8 +55,9 @@ exports.createPages = ({ actions, graphql }) => {
       ({ node }) => node.frontmatter.type == "post"
     )
     posts.forEach(({ node }) => {
+      console.log(node.fields.slug)
       createPage({
-        path: replacePath(node.fields.slug),
+        path: node.fields.slug,
         component: postTemplate,
         context: { slug: node.fields.slug },
       })
