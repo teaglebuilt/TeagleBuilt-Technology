@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         indentedSyntax: true,
-        postCssPlugins: [require('tailwindcss')],
+        postCssPlugins: [require("tailwindcss")],
         cssLoaderOptions: {
           localIdentName:
             process.env.NODE_ENV == "development"
@@ -26,17 +26,17 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: [`Pacifico`, `Railway`, `Ubuntu`]
-        }
-      }
+          families: [`Pacifico`, `Railway`, `Ubuntu`],
+        },
+      },
     },
     {
       resolve: "gatsby-plugin-use-dark-mode",
       options: {
-         classNameDark: "dark-mode",
-         classNameLight: "light-mode",
-         storageKey: "darkMode",
-         minify: true,
+        classNameDark: "dark-mode",
+        classNameLight: "light-mode",
+        storageKey: "darkMode",
+        minify: true,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -66,8 +66,18 @@ module.exports = {
       resolve: `gatsby-source-github`,
       options: {
         key: process.env.GATSBY_GITHUB_API_TOKEN,
-        repos: ['jupyterlab/jupyterlab', 'teaglebuilt/gatsby-theme-binder', 'codemirror/CodeMirror']
-      }
+        repos: [
+          "jupyterlab/jupyterlab",
+          "teaglebuilt/gatsby-theme-binder",
+          "codemirror/CodeMirror",
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-devto`,
+      options: {
+        articles: [`257536`],
+      },
     },
     `gatsby-transformer-sharp`,
     {
@@ -92,8 +102,8 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
-              noInlineHighlight: false
-            }
+              noInlineHighlight: false,
+            },
           },
           {
             resolve: `gatsby-remark-smartypants`,
@@ -145,8 +155,8 @@ module.exports = {
               changefreq: `daily`,
               priority: 0.7,
             }
-          })
-      }
+          }),
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -157,14 +167,15 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#0d3042`,
         display: `standalone`,
-        icon: `src/images/code.png`, 
+        icon: `src/images/code.png`,
       },
     },
     {
-      resolve: 'gatsby-plugin-mailchimp',
+      resolve: "gatsby-plugin-mailchimp",
       options: {
-          endpoint: 'https://teaglebuilt.us4.list-manage.com/subscribe/post?u=28970195ea57c7ee89fcdae29&amp;id=d3b1211b62', 
-        },
+        endpoint:
+          "https://teaglebuilt.us4.list-manage.com/subscribe/post?u=28970195ea57c7ee89fcdae29&amp;id=d3b1211b62",
+      },
     },
     `gatsby-plugin-offline`,
     {
@@ -230,8 +241,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-152839907-1`,
-        head: true
-      }
+        head: true,
+      },
     },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
@@ -241,6 +252,6 @@ module.exports = {
         defaultDataLayer: { platform: `gatsby` },
       },
     },
-    `gatsby-plugin-netlify-cache`
+    `gatsby-plugin-netlify-cache`,
   ],
 }
