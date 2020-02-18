@@ -11,6 +11,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, opt
        const result = await response.json()
        let newNode = {
          id: createNodeId(`devArticle-${index}`),
+         article_id: result.id,
          title: result.title,
          description: result.description,
          cover_image: result.cover_image,
@@ -21,7 +22,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, opt
          published_timestamp: result.published_timestamp,
          tags: result.tags,
          body_html: result.body_html,
-         profile_image: result.profile_image,
+         username: result.user.username,
+         profile_image: result.user.profile_image,
          internal: {
            type: "devArticleNode",
            contentDigest: createContentDigest("devArticleNode"),

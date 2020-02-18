@@ -12,7 +12,7 @@
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "frontmatter": "0.0.3",
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.18",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-feed": "^2.3.26",
     "gatsby-plugin-google-analytics": "^2.1.34",

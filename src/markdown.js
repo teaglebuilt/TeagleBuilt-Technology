@@ -5,6 +5,8 @@ import Banner from "./components/markdown/banner"
 import ToggleIframe from "./components/markdown/toggleIframe"
 import SocialLinks from "./components/markdown/sociallinks"
 import Readme from "./components/markdown/github/readme"
+import DevCard from "./components/markdown/devto/card"
+
 
 export const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -13,6 +15,7 @@ export const renderAst = new rehypeReact({
     banner: Banner,
     toggleiframe: ToggleIframe,
     sociallinks: SocialLinks,
-    githubreadme: Readme
+    githubreadme: Readme,
+    devcard: DevCard
   },
 }).Compiler

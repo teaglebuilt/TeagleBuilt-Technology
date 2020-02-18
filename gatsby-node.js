@@ -55,7 +55,6 @@ exports.createPages = ({ actions, graphql }) => {
       ({ node }) => node.frontmatter.type == "post"
     )
     posts.forEach(({ node }) => {
-      console.log(node.fields.slug)
       createPage({
         path: node.fields.slug,
         component: postTemplate,
