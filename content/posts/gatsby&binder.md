@@ -14,6 +14,8 @@ date: 2018-06-08 07:00:00
 
 &nbsp;
 
+<devcard id='257536'></devcard>
+
 Many of us know the great benefits of using gatsby. In 2020, writing your content from markdown is very popular and has many different benefits in terms of SEO, delivery, and performance. None the less, able to integrate react components into your static content written in markdown. We all know this.
 
 Well, we also have seen examples of Gatsby used in the context if SSR. It is a little tricky in Gatsby without the capabilities of using Suspense and Lazy loading. Although, with server sent events, we can empower a gatsby static website with an active kernel from Jupyter Notebooks.
