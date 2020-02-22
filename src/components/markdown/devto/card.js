@@ -25,17 +25,17 @@ const DevCard = ({ id }) => {
                         <img src={article.profile_image} />
                     </div>
                 </a>
-                <a href={classes.bottom}>
+                <a className={classes.bottom}>
                     <div className={classes.content}>
                         <h2>{article.title}</h2>
-                        <h3>{article.username}</h3>
-                    </div>
-                    <div className={classes.taglist}>
-                        {article.tags.map(tag => {
-                            return (
-                                <span className={classes.devtag}>#{tag}</span>
-                            )
-                        })}
+                        <h3>{article.username} - Likes: {article.positive_reactions_count} - Comments: {article.comments_count}</h3>
+                        <div className={classes.taglist}>
+                            {article.tags.map(tag => {
+                                return (
+                                    <span className={classes.devtag}>#{tag}</span>
+                                )
+                            })}
+                        </div>
                     </div>
                 </a>
             </div>
