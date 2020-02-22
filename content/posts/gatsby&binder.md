@@ -54,19 +54,15 @@ Below are two NPM packages that I am using to integrate jupyter notebooks into m
 
 ***
 
-[JupyterLab - OutputArea](https://github.com/jupyterlab/jupyterlab/tree/master/packages/outputarea)
+>  [JupyterLab - OutputArea](https://github.com/jupyterlab/jupyterlab/tree/master/packages/outputarea)
+An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
 ***
 
- An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
-
-***
-
-[Jupyterlab - RenderMime](https://github.com/jupyterlab/jupyterlab/tree/master/packages/rendermime-interface)
-
-***
-
+>  [Jupyterlab - RenderMime](https://github.com/jupyterlab/jupyterlab/tree/master/packages/rendermime-interface)
  An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality
+
+***
 
 So these two packages above is how I retrieve a given running kernel and interact with it directly through Javascripts [EventSource()](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) class.
 
@@ -74,8 +70,7 @@ The next challenge is how to render the results generated from the kernel. Origi
 
 ***
 
-[CodeMirror](https://www.npmjs.com/package/codemirror)
-
+>  [CodeMirror](https://www.npmjs.com/package/codemirror)
  An interface for interacting with Jupyter, a large project split into packages relative to particular use cases and given functionality.
 
 
