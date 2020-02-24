@@ -16,7 +16,7 @@ const DevCard = ({ id }) => {
     })
 
     if(loading){
-        return <h1>...Loading DevTo Article</h1>
+        return <p>...Loading DevTo Article</p>
     } else {
         return (
             <div className={classes.devcard}>

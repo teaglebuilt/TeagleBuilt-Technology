@@ -6,7 +6,6 @@ const SEO = ({ title, description, thumbnail, keywords }) => (
   <StaticQuery
     query={query}
     render={data => {
-      console.log(data)
       const lang = "en"
       const siteMetadata = data.site.siteMetadata
       const pageTitle = title
@@ -18,6 +17,15 @@ const SEO = ({ title, description, thumbnail, keywords }) => (
       if (typeof window !== "undefined") {
         origin = window.location.origin;
       }
+      const schemaOrgJSONLD = [
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          url: 'https://www.teaglebuilt.com',
+          title: 'TeagleBuilt Technology',
+          alternateName: 'Dillan Teagle Website'
+        }
+      ];
       const image = origin + imageSrc;
       const meta = [
         {
@@ -82,6 +90,9 @@ const SEO = ({ title, description, thumbnail, keywords }) => (
               rel="stylesheet"
             />
           )}
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgJSONLD)}
+          </script>
         </Helmet>
       )
     }}

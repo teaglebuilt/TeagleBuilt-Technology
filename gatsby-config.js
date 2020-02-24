@@ -201,13 +201,17 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   title: edge.node.frontmatter.title,
                   description: edge.node.frontmatter.description,
+                  categories: edge.node.frontmatter.tags,
                   enclosure: edge.node.frontmatter.featuredImage && {
                     url: siteUrl + featuredImage.publicURL,
                   },
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [
+                    { "content:encoded": edge.node.html },
+                    { author: meta.email }
+                  ],
                 })
               })
             },
@@ -232,7 +236,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "TeagleBuilt Tech RSS",
+            title: "TeagleBuilt Tech RSS Feed",
           },
         ],
       },
